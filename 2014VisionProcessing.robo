@@ -1,0 +1,77 @@
+<head><version>2.61.1</version></head>
+<Axis_Internet_Camera>
+  <auto_back_light>TRUE</auto_back_light>
+  <auto_exposure>FALSE</auto_exposure>
+  <auto_white_balance>TRUE</auto_white_balance>
+  <brightness_value>50</brightness_value>
+  <color_level_value>50</color_level_value>
+  <compression_index>6</compression_index>
+  <contrast_value>50</contrast_value>
+  <exposure_value>50</exposure_value>
+  <ip_address>10.9.49.11</ip_address>
+  <is_active>TRUE</is_active>
+  <password>wolverine</password>
+  <port>80</port>
+  <refresh_index>8</refresh_index>
+  <resolution>2</resolution>
+  <sharpness_value>50</sharpness_value>
+  <username>root</username>
+</Axis_Internet_Camera>
+<Load_Image disabled>
+  <filename>.\not_hot_vision_target.png</filename>
+  <frame_delay>33</frame_delay>
+  <load_numbered_images>FALSE</load_numbered_images>
+  <numerical_sort>TRUE</numerical_sort>
+  <page_number>1</page_number>
+  <recursive>TRUE</recursive>
+</Load_Image>
+<Load_Image disabled>
+  <filename>.\hot_vision_target.png</filename>
+  <frame_delay>33</frame_delay>
+  <load_numbered_images>FALSE</load_numbered_images>
+  <numerical_sort>TRUE</numerical_sort>
+  <page_number>1</page_number>
+  <recursive>TRUE</recursive>
+</Load_Image>
+<Threshold>
+  <end>255</end>
+  <hysteresis>0</hysteresis>
+  <start>205</start>
+</Threshold>
+<Erode>
+  <count>2</count>
+  <erode_borders>FALSE</erode_borders>
+  <kernal_shape>4</kernal_shape>
+</Erode>
+<Dilate>
+  <avoid_connection>FALSE</avoid_connection>
+  <count>2</count>
+  <dilate_borders>FALSE</dilate_borders>
+  <kernal_shape>4</kernal_shape>
+</Dilate>
+<Blob_Size>
+  <limit>1024</limit>
+  <mask>FALSE</mask>
+  <max_area>10000</max_area>
+  <min_area>172</min_area>
+  <threshold>5</threshold>
+  <treat_as_color_image>FALSE</treat_as_color_image>
+</Blob_Size>
+<Blob_Replace>
+  <color_index>5</color_index>
+  <fill_shape>FALSE</fill_shape>
+  <order_array_on_x>FALSE</order_array_on_x>
+  <order_array_on_y>FALSE</order_array_on_y>
+  <overlay_image>Current</overlay_image>
+  <shape_index>15</shape_index>
+  <thickness>1</thickness>
+</Blob_Replace>
+<NetworkTables>
+  <delay>50</delay>
+  <filter_type_index>0</filter_type_index>
+  <hostname>10.9.49.2</hostname>
+  <port>1735</port>
+  <prefix>/SmartDashboard/</prefix>
+  <variables_to_send>BFR_COORDINATES</variables_to_send>
+  <variable_type_index>0</variable_type_index>
+</NetworkTables>
