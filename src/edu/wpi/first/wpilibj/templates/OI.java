@@ -41,6 +41,21 @@ public class OI {
             B.whileHeld(new Drop());
             JoystickButton X1 = new JoystickButton(joyStick1, 3);
             X1.whileHeld(new HoldLauncherPosition());
+            
+            //Update all values on the smart dashboard
+            SmartDashboard.putBoolean("J1 A", joyStick1.getRawButton(1));
+            SmartDashboard.putBoolean("J1 B", joyStick1.getRawButton(2));
+            SmartDashboard.putBoolean("J1 X", joyStick1.getRawButton(3));
+            SmartDashboard.putBoolean("J1 Y", joyStick1.getRawButton(4));
+            SmartDashboard.putBoolean("J1 L Bumper", joyStick1.getRawButton(5));
+            SmartDashboard.putBoolean("J1 R Bumper", joyStick1.getRawButton(6));
+            
+            SmartDashboard.putBoolean("J2 A", joyStick2.getRawButton(1));
+            SmartDashboard.putBoolean("J2 B", joyStick2.getRawButton(2));
+            SmartDashboard.putBoolean("J2 X", joyStick2.getRawButton(3));
+            SmartDashboard.putBoolean("J2 Y", joyStick2.getRawButton(4));
+            SmartDashboard.putBoolean("J2 L Bumper", joyStick2.getRawButton(5));
+            SmartDashboard.putBoolean("J2 R Bumper", joyStick2.getRawButton(6));
         }
         else {
             JoystickButton A = new JoystickButton(joyStick1, 1); //A = 1, B = 2, X = 3, Y = 4
@@ -55,8 +70,8 @@ public class OI {
             Y.whileHeld(new ResetLauncher());
             JoystickButton B = new JoystickButton(joyStick1, 2);
             B.whileHeld(new Drop());
-        }        
-         //Update all values on the smart dashboard
+            
+            //Update all values on the smart dashboard
             SmartDashboard.putBoolean("J1 A", joyStick1.getRawButton(1));
             SmartDashboard.putBoolean("J1 B", joyStick1.getRawButton(2));
             SmartDashboard.putBoolean("J1 X", joyStick1.getRawButton(3));
@@ -70,8 +85,10 @@ public class OI {
             SmartDashboard.putBoolean("J2 Y", joyStick2.getRawButton(4));
             SmartDashboard.putBoolean("J2 L Bumper", joyStick2.getRawButton(5));
             SmartDashboard.putBoolean("J2 R Bumper", joyStick2.getRawButton(6));
+        }        
+         
     }
-    //Github mercurial
+    
     public double getLeftSpeed() {
         xBox1.updateController(); // update the xbox controller state info
         

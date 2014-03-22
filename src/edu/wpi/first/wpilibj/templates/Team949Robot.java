@@ -36,7 +36,7 @@ public class Team949Robot extends IterativeRobot {
         // Initialize all subsystems
         CommandBase.init();
         // instantiate the command used for the autonomous period
-        autonomousCommand = new Auto();
+        autonomousCommand = new AutonomousCommand();
         driveCommand = new DriveWithXboxController();
     }
 

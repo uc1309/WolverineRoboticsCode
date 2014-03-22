@@ -33,12 +33,12 @@ public class Auto extends CommandBase {
     
             
     boolean LIVE_MODE = true;
-    boolean SHOOT_MODE = true;
+    boolean SHOOT_MODE = false;
     boolean STRAFE_MODE = false;
     boolean AT_FIRING_DISTANCE = false;
     double firingDistanceTime = -1;
     boolean FIRED = false;
-    boolean auto = true;
+    boolean AUTO = false;
     
     public Auto() {
         // Use requires() here to declare subsystem dependencies
@@ -65,10 +65,15 @@ public class Auto extends CommandBase {
         setTimeout(10.0);
         autonomousTimer.reset();
         autonomousTimer.start();
+        autonomousTimer.reset();
         
-        pickupMech = new Pickup();
-        shooter = new Shoot();
         FIRED = false;
+                //orient the motors
+        chassisDrive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        chassisDrive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+        chassisDrive2.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+        chassisDrive2.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+        
     }
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
@@ -87,14 +92,14 @@ public class Auto extends CommandBase {
         double distanceToGoal = vision.getDistanceToGoal();
         double angleToGoal = vision.getAngleToGoal();
         
-        if (autonomousTimer.get() < 0.5) {
-            pickupMech.start();
+        if (autonomousTimer.get() < 0.2) {
+            pickup.lowerPick();
         }
         else {
-            pickupMech.cancel();
+            pickup.setZero();
         }
 
-        if (distanceToGoal > 0.0 && distanceToGoal < 360.0 && auto) { // if we have a valid distance
+        if (AUTO && distanceToGoal > 0.0 && distanceToGoal < 360.0) { // if we have a valid distance
             double deltaDistance = distanceToGoal - desiredDistance;
             // drive to goal
             if (Math.abs(deltaDistance) < desiredDistanceEpsilon) {
@@ -119,7 +124,7 @@ public class Auto extends CommandBase {
                             autonomousTimer.get() > firingDistanceTime + 1.0) {
                         System.out.println("fire!!!");
                         if (SHOOT_MODE)
-                            shooter.start();
+                            launcher.autonomousLaunch();
                         FIRED = true;
                     }
                 }
@@ -159,32 +164,26 @@ public class Auto extends CommandBase {
             }
         }
         else {
-            // Can't see the target, so just run blind?
-            if (autonomousTimer.get() < 5.0) {
-                if (LIVE_MODE) {
-                    chassisDrive.mecanumDrive_Cartesian(0, maxForwardSpeed / 2, 0, 0);
-                    chassisDrive2.mecanumDrive_Cartesian(0, maxForwardSpeed / 2, 0, 0);
-                }
-                //System.out.println("driving blind: " + maxForwardSpeed);
+            // Can't see the target or don't want camera auto, so just run blind?
+            if (autonomousTimer.get() < 3) {
+                chassisDrive.mecanumDrive_Cartesian(0, maxForwardSpeed/2, 0, 0);
+                chassisDrive2.mecanumDrive_Cartesian(0,maxForwardSpeed/2, 0, 0);
             }
-            else if (autonomousTimer.get() < 3.0) {
-                // stop
-                //System.out.println("stopping blind: " + 0.0);
-                if (LIVE_MODE) {
-                    chassisDrive.mecanumDrive_Cartesian(0, 0, 0, 0);
-                    chassisDrive2.mecanumDrive_Cartesian(0, 0, 0, 0);
-                }
-            } else {
-                //System.out.println("firing blind");
-                if (LIVE_MODE) {
-                    chassisDrive.mecanumDrive_Cartesian(0, 0, 0, 0);
-                    chassisDrive2.mecanumDrive_Cartesian(0, 0, 0, 0);
-                }
-                if (SHOOT_MODE)
-                    shooter.start();
-                FIRED = true;
+            else {
+                chassisDrive.mecanumDrive_Cartesian(0, 0, 0, 0);
+                chassisDrive2.mecanumDrive_Cartesian(0, 0, 0, 0);
             }
             
+            if(autonomousTimer.get() > 4 && autonomousTimer.get() < 6) {
+                if (SHOOT_MODE) {
+                    if (!launcher.hasShot) {
+                        launcher.autonomousLaunch();
+                    }
+                }
+            }
+            else {
+                launcher.setZero();
+            }
             // Can't see the target, so just turn-in-place?
             // Alternate option
             //chassisDrive.mecanumDrive_Cartesian(0, 0, maxAngleSpeed, 0);

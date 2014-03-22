@@ -36,7 +36,7 @@ public class AutonomousCommand extends CommandBase {
     private final double maxAngleToGoal = 5;
     private final boolean STRAFE_MODE = true;
     private final boolean LIVEMODE = true;
-    private final boolean AUTO = true;
+    private final boolean AUTO = false;
     private boolean hasFired = false;
 
     public AutonomousCommand() {
@@ -55,6 +55,7 @@ public class AutonomousCommand extends CommandBase {
         setTimeout(10.0);
         autonomousTimer.reset();
         autonomousTimer.start();
+        autonomousTimer.reset();
 
         front_rightE.setDistancePerPulse(distPerPulse);
         front_leftE.setDistancePerPulse(distPerPulse);
@@ -134,28 +135,21 @@ public class AutonomousCommand extends CommandBase {
             }
         } else {
             
-//           try {
-//                
-//                drive.mecanumDrive_Cartesian(0, -0.6, 0, 0);
-//                drive2.mecanumDrive_Cartesian(0, -0.6, 0, 0);
-//                wait(10);
-//            } catch (InterruptedException ex) {
-//                ex.printStackTrace();
-//            }
             if (autonomousTimer.get() < 1.5) {
                 drive.mecanumDrive_Cartesian(0, -0.5, 0, 0);
                 drive2.mecanumDrive_Cartesian(0, -0.5, 0, 0);
             }
-//            else if(autonomousTimer.get() >= 1.5 && autonomousTimer.get() < 3) {
-//                drive.mecanumDrive_Cartesian(0, 0, 0, 0);
-//                drive2.mecanumDrive_Cartesian(0, 0, 0, 0);
-//                if (!launcher.hasShot) {
-//                    launcher.launch();
-//                }
-//            }
             else {
                 drive.mecanumDrive_Cartesian(0, 0, 0, 0);
                 drive2.mecanumDrive_Cartesian(0, 0, 0, 0);
+            }
+            
+            if(autonomousTimer.get() > 2.5 && autonomousTimer.get() < 4) {
+                if (!launcher.hasShot) {
+                    launcher.autonomousLaunch();
+                }
+            }
+            else {
                 launcher.setZero();
             }
         }
