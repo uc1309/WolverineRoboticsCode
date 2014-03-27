@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.templates.commands.*;
 import edu.wpi.first.wpilibj.Victor;
 import edu.wpi.first.wpilibj.AnalogChannel;
 import edu.wpi.first.wpilibj.PIDController;
+import java.util.Timer;
 
 /**
  *
@@ -31,7 +32,7 @@ public class Launcher extends Subsystem {
     private AnalogChannel sonarAC2 = RobotMap.sonarCh2;
     
     PIDController shooterControl = new PIDController(0.005, 0.1, 0.0, shooterAC, launcher2);
-
+    
     public void initDefaultCommand() {
         // Set the default command for a subsystem here.
         setDefaultCommand(new LauncherSetZero());
@@ -48,33 +49,6 @@ public class Launcher extends Subsystem {
         hasShot = false;
     }
     
-    public void autoLaunch(){
-        while (shooterAC.getVoltage() < 4.95) {
-                launcher.set(1.0);
-                launcher2.set(1.0);
-            }
-            hasShot = true;
-    }
-    
-    public void autonomousLaunch(){
-        while (shooterAC.getVoltage() < 5.0) {
-                launcher.set(1.0);
-                launcher2.set(1.0);
-            }
-        hasShot = true;
-    }
-    
-    public void autoReset() {
-        launcher.set(-0.6);
-        launcher2.set(-0.6);
-        if(shooterAC.getVoltage() < 2.8){  
-            while (shooterAC.getVoltage() < 4.95) {
-                launcher.set(1.0);
-                launcher2.set(1.0);
-            }
-            hasShot = false;
-        }
-    }
     public void getVoltage() {
         String chan5 = "" + shooterAC.getVoltage();
         chan5 = chan5.substring(0,6);

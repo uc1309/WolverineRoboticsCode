@@ -86,7 +86,6 @@ public class OI {
             SmartDashboard.putBoolean("J2 L Bumper", joyStick2.getRawButton(5));
             SmartDashboard.putBoolean("J2 R Bumper", joyStick2.getRawButton(6));
         }        
-         
     }
     
     public double getLeftSpeed() {
