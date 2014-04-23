@@ -14,7 +14,7 @@ import java.util.Timer;
 
 /**
  *
- * @author Robot
+ * @author Justin
  */
 public class Launcher extends Subsystem {
     // Put methods for controlling this subsystem

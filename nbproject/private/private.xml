@@ -4,22 +4,27 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/CommandBase.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/XboxController.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/Shoot.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/subsystems/Launcher.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/subsystems/DriveTrain.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/RobotMap.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/Pickup.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/ResetLauncher.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/Team949Robot.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/LauncherSetZero.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/GetDistanceToGoal.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/OI.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/subsystems/Vision.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/AutonomousCommand.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/subsystems/PickupMech.java</file>
-            <file>file:/F:/Code949-Commandbased/src/edu/wpi/first/wpilibj/templates/commands/ManualLaunch.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/AutonomousCommand.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/Team949Robot.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/RaisePickup.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/subsystems/PickupMech.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/DriveWithXboxController.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/AutonomousGroup.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/RobotMap.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/CommandBase.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/LauncherSetZero.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/subsystems/Launcher.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/AutonomousLaunch.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/Shoot.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/AutonomousDrive.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/Pickup.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/ResetLauncher.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/Drop.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/subsystems/DriveTrain.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/HoldLauncherPosition.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/commands/LowerPickup.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/subsystems/Vision.java</file>
+            <file>file:/D:/Users/Justin/Documents/Git/WolverineRoboticsCode/src/edu/wpi/first/wpilibj/templates/OI.java</file>
         </group>
     </open-files>
 </project-private>

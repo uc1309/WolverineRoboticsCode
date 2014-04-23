@@ -9,7 +9,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 /**
  *
- * @author Robot
+ * @author Justin
  */
 public class PickupMech extends Subsystem {
     // Put methods for controlling this subsystem

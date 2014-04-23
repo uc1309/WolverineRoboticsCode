@@ -34,7 +34,7 @@ public class OI {
             JoystickButton R1 = new JoystickButton(joyStick2, 6);  //6 = right bumper
             R1.whileHeld(new LowerPickup());
             JoystickButton L1 = new JoystickButton(joyStick2, 5);
-            L1.whileHeld(new ManualLaunch());
+            L1.whenPressed(new AutonomousLaunch());
             JoystickButton Y = new JoystickButton(joyStick2, 4);
             Y.whileHeld(new ResetLauncher());
             JoystickButton B = new JoystickButton(joyStick2, 2);
@@ -65,7 +65,7 @@ public class OI {
             JoystickButton R1 = new JoystickButton(joyStick1, 6);  //6 = right bumper
             R1.whenPressed(new LowerPickup());
             JoystickButton L1 = new JoystickButton(joyStick1, 5);
-            L1.whileHeld(new ManualLaunch());
+            //L1.whenPressed(new AutonomousLaunch());
             JoystickButton Y = new JoystickButton(joyStick1, 4);
             Y.whileHeld(new ResetLauncher());
             JoystickButton B = new JoystickButton(joyStick1, 2);

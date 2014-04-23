@@ -11,7 +11,7 @@ import edu.wpi.first.wpilibj.RobotDrive;
 
 /**
  *
- * @author Robot
+ * @author Justin
  */
 public class DriveTrain extends Subsystem {
     RobotDrive drive = RobotMap.drive;

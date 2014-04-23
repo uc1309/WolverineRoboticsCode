@@ -1,5 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package edu.wpi.first.wpilibj.templates.commands;
@@ -8,21 +9,22 @@ package edu.wpi.first.wpilibj.templates.commands;
  *
  * @author Justin
  */
-public class RaisePickup extends CommandBase {
+public class AutonomousDrive extends CommandBase {
     
-    public RaisePickup() {
+    public AutonomousDrive() {
         // Use requires() here to declare subsystem dependencies
-        requires(pickup);
-        setTimeout(0.4);
+        requires(driveTrain);
+        setTimeout(3.0);
     }
 
     // Called just before this Command runs the first time
     protected void initialize() {
+        driveTrain.setZero();
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
-        pickup.raisePick();
+        driveTrain.mechanumDrive(0, -0.25, 0);
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -32,12 +34,11 @@ public class RaisePickup extends CommandBase {
 
     // Called once after isFinished returns true
     protected void end() {
-        pickup.setZero();
+        driveTrain.setZero();
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
-        pickup.setZero();
     }
 }

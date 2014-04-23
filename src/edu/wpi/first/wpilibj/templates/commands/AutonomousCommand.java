@@ -10,6 +10,7 @@ import edu.wpi.first.wpilibj.Relay;
 import edu.wpi.first.wpilibj.RobotDrive;
 import edu.wpi.first.wpilibj.Timer;
 import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj.templates.RobotMap;
 
@@ -19,6 +20,7 @@ import edu.wpi.first.wpilibj.templates.RobotMap;
  */
 public class AutonomousCommand extends CommandBase {
 
+    Command autoGroup = new AutonomousGroup();
     Timer autonomousTimer = new Timer();
     RobotDrive drive = RobotMap.drive;
     RobotDrive drive2 = RobotMap.drive2;
@@ -56,6 +58,7 @@ public class AutonomousCommand extends CommandBase {
         requires(vision);
         requires(launcher);
         requires(driveTrain);
+        requires(pickup);
     }
 
     // Called just before this Command runs the first time
@@ -63,6 +66,9 @@ public class AutonomousCommand extends CommandBase {
         //Relay ledSpike = new Relay(RobotMap.visionLEDRelay);
         //ledSpike.setDirection(Relay.Direction.kBoth);
         //ledSpike.set(Relay.Value.kForward);
+        if(!AUTO)
+            autoGroup.start();
+        
         vision.visionInit();
         setTimeout(10.0);
         autonomousTimer.reset();
@@ -99,6 +105,7 @@ public class AutonomousCommand extends CommandBase {
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
         if (AUTO) {
+            //using PID values (still untested)
             if (front_rightE.getDistance() < -120) {
                 front_right.set(-0.4);
                 front_right2.set(-0.4);
@@ -134,25 +141,6 @@ public class AutonomousCommand extends CommandBase {
                 rear_left2.set(0);
             }
             
-        } else {
-            if (autonomousTimer.get() < 0.4) {
-                //pickup.raisePick();
-            } else {
-                pickup.setZero();
-            }
-            if (autonomousTimer.get() < 3) {
-                drive.mecanumDrive_Cartesian(0, -0.25, 0, 0);
-                drive2.mecanumDrive_Cartesian(0, -0.25, 0, 0);
-            } else {
-                drive.mecanumDrive_Cartesian(0, 0, 0, 0);
-                drive2.mecanumDrive_Cartesian(0, 0, 0, 0);
-            }
-            
-            if(autonomousTimer.get() > 4 && autonomousTimer.get() < 5) {
-                launcher.launch();
-            } else {
-                launcher.setZero();
-            }
         }
     }
 

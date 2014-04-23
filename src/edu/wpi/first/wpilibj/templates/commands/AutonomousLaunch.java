@@ -7,13 +7,14 @@ package edu.wpi.first.wpilibj.templates.commands;
 
 /**
  *
- * @author frc949
+ * @author Justin
  */
-public class ManualLaunch extends CommandBase {
+public class AutonomousLaunch extends CommandBase {
     
-    public ManualLaunch() {
+    public AutonomousLaunch() {
         // Use requires() here to declare subsystem dependencies
         requires(launcher);
+        setTimeout(0.5);
     }
 
     // Called just before this Command runs the first time
@@ -27,7 +28,7 @@ public class ManualLaunch extends CommandBase {
 
     // Make this return true when this Command no longer needs to run execute()
     protected boolean isFinished() {
-        return false;
+        return isTimedOut();
     }
 
     // Called once after isFinished returns true

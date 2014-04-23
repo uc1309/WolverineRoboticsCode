@@ -6,7 +6,7 @@ package edu.wpi.first.wpilibj.templates.commands;
 
 /**
  *
- * @author Robot
+ * @author Justin
  */
 public class LauncherSetZero extends CommandBase {
     

@@ -22,7 +22,7 @@ import edu.wpi.first.wpilibj.networktables.NetworkTable;
 import edu.wpi.first.wpilibj.networktables2.type.NumberArray;
 import edu.wpi.first.wpilibj.tables.TableKeyNotDefinedException;
 /**
- *
+ * @author Justin
  */
 
 public class Vision extends Subsystem {
